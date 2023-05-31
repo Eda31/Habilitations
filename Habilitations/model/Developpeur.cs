@@ -6,6 +6,8 @@ namespace Habilitations.model
     /// </summary>
     public class Developpeur
     {
+        private int idProfil;
+        private string profil;
 
         /// <summary>
         /// Valorise les propriétés
@@ -17,7 +19,7 @@ namespace Habilitations.model
         /// <param name="mail"></param>
         /// <param name="pwd"></param>
         /// <param name="profil"></param>
-        public Developpeur(int iddeveloppeur, string nom, string prenom, string tel, string mail, Profil profil)
+        public Developpeur(int iddeveloppeur, string nom, string prenom, string tel, string mail, int idProfil, Profil profil)
         {
             this.Iddeveloppeur = iddeveloppeur;
             this.Nom = nom;
@@ -26,6 +28,17 @@ namespace Habilitations.model
             this.Mail = mail;
             this.Pwd = Pwd;
             this.Profil = profil;
+        }
+
+        public Developpeur(int idDeveloppeur, string nom, string prenom, string tel, string mail, int idProfil, string profil)
+        {
+            Iddeveloppeur = idDeveloppeur;
+            Nom = nom;
+            Prenom = prenom;
+            Tel = tel;
+            Mail = mail;
+            this.idProfil = idProfil;
+            this.profil = profil;
         }
 
         public int Iddeveloppeur { get; }
